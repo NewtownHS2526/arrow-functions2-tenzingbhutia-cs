@@ -24,7 +24,17 @@ function getGrade(score) {
     }
 }
 // Convert to arrow function:
-
+const getGrade = (score) =>  {
+    if (score >= 90) {
+        return "A";
+    } else if (score >= 80) {
+        return "B";
+    } else if (score >= 70) {
+        return "C";
+    } else {
+        return "F";
+    }
+}
 
 // Problem 3
 function calculateTotal(items) {
@@ -35,7 +45,13 @@ function calculateTotal(items) {
     return total;
 }
 // Convert to arrow function:
-
+const calculateTotal = (items) => {
+    let total = 0;
+    for (let i = 0; i < items.length; i++) {
+        total += items[i];
+    }
+    return total;
+}
 
 // Problem 4
 function filterEvenNumbers(numbers) {
@@ -44,7 +60,7 @@ function filterEvenNumbers(numbers) {
     });
 }
 // Convert to arrow function (convert both outer and inner functions):
-
+const filterEvenNumbers = (numbers) => numbers.filter((num) => num % 2 === 0);
 
 // Problem 5
 function mapToSquares(arr) {
@@ -52,11 +68,21 @@ function mapToSquares(arr) {
         return x * x;
     });
 }
+const mapToSquares = (arr) => arr.map((x) => x *x);
 // Convert to arrow function (convert both outer and inner functions):
 
 
 // Problem 6
 function findLongestWord(words) {
+    let longest = "";
+    words.forEach(function(word) {
+        if (word.length > longest.length) {
+            longest = word;
+        }
+    });
+    return longest;
+}
+const findLongestWord = (words) => {
     let longest = "";
     words.forEach(function(word) {
         if (word.length > longest.length) {
@@ -75,7 +101,7 @@ function sumArray(numbers) {
     }, 0);
 }
 // Convert to arrow function (convert both outer and inner functions):
-
+const sumArray = (numbers) =>  numbers.reduce(function(acc, num) => acc + num => 0)
 
 // Problem 8
 function getInitials(firstName, lastName) {
