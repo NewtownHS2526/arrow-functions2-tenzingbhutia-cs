@@ -9,6 +9,11 @@ function isAdult(age) {
     return false;
 }
 // Convert to arrow function:
+const isAdult = (age) => {if (age >= 18) {
+        return true;
+    }
+    return false;
+}
 
 
 // Problem 2
@@ -84,7 +89,7 @@ function findLongestWord(words) {
 }
 const findLongestWord = (words) => {
     let longest = "";
-    words.forEach(function(word) {
+    words.forEach((word) => {
         if (word.length > longest.length) {
             longest = word;
         }
@@ -101,13 +106,14 @@ function sumArray(numbers) {
     }, 0);
 }
 // Convert to arrow function (convert both outer and inner functions):
-const sumArray = (numbers) =>  numbers.reduce(function(acc, num) => acc + num => 0)
+const sumArray = (numbers) =>  numbers.reduce((acc, num) => acc + num, 0);
 
 // Problem 8
 function getInitials(firstName, lastName) {
     return firstName.charAt(0).toUpperCase() + lastName.charAt(0).toUpperCase();
 }
 // Convert to arrow function:
+const getInitials = (firstName,lastName) =>firstName.charAt(0).toUpperCase() + lastName.charAt(0).toUpperCase();
 
 
 // Problem 9
@@ -118,7 +124,7 @@ function checkPassword(password) {
     return false;
 }
 // Convert to arrow function:
-
+const checkPassword = (password) => password.length >= 8;
 
 // Problem 10
 function formatName(first, middle, last) {
@@ -129,3 +135,9 @@ function formatName(first, middle, last) {
 }
 // Convert to arrow function:
 
+const formatName = (first, middle, last) =>  {
+    if (middle) {
+        return first + " " + middle + " " + last;
+    }
+    return first + " " + last;
+}
